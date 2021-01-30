@@ -1,0 +1,48 @@
+<%- include("partials/header"); -%>
+<section class="top-banner">
+		<div class="container">
+		<h1 class="heading">What's The Weather ?</h1>
+		
+		<form action="/" method="post">
+			
+			<input type="text" name="cityName"  form-control" placeholder="Enter a city name" autocomplete="off" autofocus required>
+			
+			<button type="submit">Check</button>
+			
+			
+		</form>
+	</div>
+</section>
+
+<section class="ajax-section">
+	
+	<div class="container">
+		<% if(data !== null){%>
+		<ul class="cities">
+			<li class="city">
+				<h2 class="city-name">
+					<span><%=data.name %></span>
+					<sup><%=data.sys.country %></sup>	
+					</h2>
+				<div class="city-temp">
+					<%= temp %>
+					<sup>°C</sup>
+				</div>	
+				<figure>
+				<img class="city-icon" src=<%=img %> alt="Weather Icon">
+
+				<figcaption> <%=data.weather[0].description %>  </figcaption>
+				</figure>
+				
+			</li>
+		</ul>
+
+		<% }%>
+
+				<% if(error!==null){%>
+                <p class="msg"><%=error %></p>
+                <% } %>
+	</div>
+</section>
+<%- include("partials/footer"); -%>
+
