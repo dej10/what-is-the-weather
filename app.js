@@ -16,7 +16,7 @@ app.get("", function (req, res) {
 
 	res.render("index",
 	 { data: null,
-	  error: "Enter a city name to get weather data"});
+	  error: "Please search for a valid city 😩"});
 
 	
 });
@@ -55,13 +55,6 @@ app.post("/", function (req, res) {
 			 catch (e) {
                 res.render("index", { data: null, error: "Please search for a valid city 😩" });
             }
-
-// 			res.write("<h1>The Temperature in " + locale + " is " + temp + " 	C</h1>");
-// 			res.write(description);
-// 			res.write("<img src="+ iconUrl + ">");
-// 
-// 			res.redirect("");
-
 
 
 		});
