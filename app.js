@@ -1,10 +1,11 @@
+require('dotenv').config()
 const express = require("express");
 const https  = require("http");
 const ejs = require("ejs");
 const bodyParser = require("body-parser");
 
 const app = express();
-require('dotenv').config()
+
 
 
 app.set('view engine', 'ejs');
@@ -62,10 +63,12 @@ app.post("/", function (req, res) {
 
 
 
+
+
+	
+
 });
 
-
-
-app.listen(process.env.PORT || 3000	, function(){
+app.listen(3000	, function(){
 	console.log("Server is running on port 3000 ......")
-});;
+});
